@@ -47,17 +47,21 @@ function checkItem(index){
 
 function TodoComponent(todo,index){
     const main_div = document.createElement('div');
+
+    const task_container = document.createElement('div');
+    const btncontainer = document.createElement('div');
     const check = document.createElement('input');
     const content = document.createElement('span');
     const edit_btn = document.createElement('button');
     const del_btn = document.createElement('button');
+    
     
     del_btn.innerHTML = 'Delete';
     del_btn.setAttribute('onclick', `deleteTodo(${index})`);
     del_btn.setAttribute('class','bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-3 rounded-lg transition space-x-1 font-mono')
 
     check.setAttribute('type','checkbox');
-    check.setAttribute('class',' form-checkbox w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600');
+    check.setAttribute('class','appearance-none w-4 h-4 bg-transparent border border-gray-500 rounded-full checked:bg-blue-500 focus:outline-none');
     check.setAttribute('id',`checkItem-${index}`);
     check.setAttribute('onclick',`checkItem(${index})`);
 
@@ -70,13 +74,19 @@ function TodoComponent(todo,index){
     edit_btn.setAttribute('onclick', `editTodo(${index})`);
     edit_btn.setAttribute('class','bg-green-500 hover:bg-yellow-600 text-white font-bold py-1 px-3 rounded-lg transition space-x-1 font-mono');
 
+    task_container.setAttribute('class','flex gap-x-4 items-center');
+    btncontainer.setAttribute('class','flex gap-x-4')
+
     main_div.setAttribute('id', `todos-${index+1}`);
-    main_div.setAttribute('class','flex items-center justify-between bg-cyan-700 p-3 rounded-lg space-x-3 font-mono');
-    main_div.appendChild(check);
-    main_div.appendChild(content);
-    main_div.appendChild(del_btn);
-    main_div.appendChild(edit_btn);
-    
+    main_div.setAttribute('class',' w-full flex items-center justify-between p-3 rounded-lg space-x-3 font-mono');
+
+    task_container.appendChild(check);
+    task_container.appendChild(content);
+    btncontainer.appendChild(del_btn);
+    btncontainer.appendChild(edit_btn);
+
+    main_div.appendChild(task_container);
+    main_div.appendChild(btncontainer);
 
     return main_div;
 }

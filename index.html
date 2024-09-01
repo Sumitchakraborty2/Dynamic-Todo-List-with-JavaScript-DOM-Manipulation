@@ -10,6 +10,9 @@
             color: rgba(255, 255, 255, 0.7); /* Light grey, adjust as needed */
             opacity: 1;
         }
+        .max-width{
+            width:10px;
+        }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -23,7 +26,7 @@
                 id="task-input"
                 placeholder="Enter your todo here"
                 autofocus;
-                class="w-full max-w-screen-lg p-3 rounded-lg bg-cyan-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                class="w-full max-w-screen-lg p-3 rounded-lg bg-transparent text-white focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-100"
             />
             <button
                 id="add-btn"
@@ -31,8 +34,8 @@
                 Add Todo
             </button>
         </div>
-        <div id="todo-parent" class="space-y-3 flex justify-center">
-            <div id="lst" class=" w-full max-w-screen-lg p-3 flex flex-col items-center justify-between bg-cyan-700 p-3 rounded-lg">
+        <div id="todo-parent" class="space-y-3 flex justify-center ">
+            <div id="lst" class=" w-full max-w-screen-xl px-12 flex flex-col items-start justify-center bg-transparent rounded-lg">
             </div>
         </div>
     </div>
