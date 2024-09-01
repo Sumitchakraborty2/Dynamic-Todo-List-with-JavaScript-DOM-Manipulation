@@ -1,7 +1,7 @@
 let todos = [];
 // add todo
 document.getElementById('add-btn').addEventListener('click', () => {
-    let value = document.querySelector('#task-input').value.trim();
+    let value = capitalizeFirstLetter(document.querySelector('#task-input').value.trim());
     todos.push({
         title: value
     })
@@ -23,13 +23,21 @@ function editTodo(index){
         content.contentEditable = 'false';
         edit_btn.textContent = 'Edit';
         content.classList.remove('editable');
+
+        // UPDATE TODO ARRAY WITH NEW CONTENT
+        todos[index].title = capitalizeFirstLetter(content.innerHTML.trim());
+
+        // CALL RENDER TO UPDATE THE UI
+        render();
+
     } else{
         content.contentEditable = 'true';
         content.focus();
         edit_btn.textContent = 'Done';
         content.classList.add('editable'); 
+        
     }
-    todos[index].title = content.innerHTML;
+    
 }
 
 // check items
@@ -106,3 +114,8 @@ function render(){
     inputEl.value = ''; 
     
 }
+
+// captalize the first letter
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
