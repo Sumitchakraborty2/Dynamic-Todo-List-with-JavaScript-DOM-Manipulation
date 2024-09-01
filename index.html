@@ -14,24 +14,25 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="flex flex-col items-center justify-center h-screen bg-neutral-900 text-white overflow-y-auto font-mono">
-    <div class="w-full max-w-fit bg-cyan-950 rounded-lg shadow-lg p-6 mt-16 mx-auto">
+<body class="flex flex-col items-center h-screen bg-neutral-900 text-white overflow-y-auto font-mono">
+    <div class="w-full text-center rounded-lg p-6 mt-16 mx-auto">
         <h1 class="text-2xl font-bold text-center mb-6">Todo List</h1>
-        <div class="mb-4 gap-y-12">
+        <div class=" w-full mb-4 gap-y-12">
             <input
                 type="text"
                 id="task-input"
                 placeholder="Enter your todo here"
-                class="max-w-screen-lg p-3 rounded-lg bg-cyan-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                autofocus;
+                class="w-full max-w-screen-lg p-3 rounded-lg bg-cyan-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <button
                 id="add-btn"
-                class="max-w-screen-lg p-3 bg-blue-500 rounded-lg text-white font-bold hover:bg-blue-600 transition">
+                class="p-3 bg-blue-500 rounded-lg text-white font-bold hover:bg-blue-600 transition">
                 Add Todo
             </button>
         </div>
-        <div id="todo-parent" class="space-y-3">
-            <div id="lst" class="flex flex-col items-center justify-between bg-cyan-700 p-3 rounded-lg">
+        <div id="todo-parent" class="space-y-3 flex justify-center">
+            <div id="lst" class=" w-full max-w-screen-lg p-3 flex flex-col items-center justify-between bg-cyan-700 p-3 rounded-lg">
             </div>
         </div>
     </div>
